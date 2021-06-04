@@ -1,13 +1,15 @@
-var user_hand = prompt('じゃんけんの手をグー、チョキ、パーから選んでください。');
+do {
+  var user_hand = prompt('じゃんけんの手をグー、チョキ、パーから選んでください。');
 
-var js_hand = getJShand();
+  var js_hand = getJShand();
 
-var judge = winLose(user_hand, js_hand);
+  var judge = winLose(user_hand, js_hand);
 
-var result_message;
-result_message = result()
+  var result_message;
+  result_message = result()
 
-alert(result_message);
+  alert(result_message);
+} while(result_message == 'グー・チョキ・パーのいずれかを入力してください');
 
 function result(){
   if(user_hand == null){
