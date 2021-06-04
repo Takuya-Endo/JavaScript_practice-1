@@ -4,7 +4,22 @@ var js_hand = getJShand();
 
 var judge = winLose(user_hand, js_hand);
 
-alert('あなたの選んだ手は' + user_hand + 'です。\nJavaScriptの選んだ手は' + js_hand + 'です。\n結果は' + judge + 'です。');
+var result_message;
+result_message = result()
+
+alert(result_message);
+
+function result(){
+  if(user_hand == null){
+    result_message = 'またチャレンジしてね';
+  } else if(user_hand == "グー" || user_hand == "チョキ" || user_hand == "パー"){
+    result_message = 'あなたの選んだ手は' + user_hand + 'です。\nJavaScriptの選んだ手は' + js_hand + 'です。\n結果は' + judge + 'です。';
+  } else {
+    result_message = 'グー・チョキ・パーのいずれかを入力してください';
+  }
+
+  return result_message
+}
 
 function getJShand(){
   var js_hand_num = Math.floor( Math.random() * 3 );
